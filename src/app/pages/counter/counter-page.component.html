@@ -1,0 +1,10 @@
+<h1>Counter Page</h1>
+
+<p>Counter {{ counter }}</p>
+<p>Counter signal {{ counterSignal() }}</p>
+
+<div class="buttons-container">
+  <button (click)="increaseNumber(1)">+1</button>
+  <button (click)="decreaseNumber(1)">-1</button>
+  <button (click)="resetNumber()">Reset</button>
+</div>
