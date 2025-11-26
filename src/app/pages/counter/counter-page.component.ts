@@ -3,7 +3,6 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 @Component({
   selector: 'app-counter-page',
   templateUrl: './counter-page.component.html',
-  styleUrls: ['./counter-page.component.css'],
 
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -12,8 +11,7 @@ export class CounterPageComponent {
 
   counterSignal = signal(10);
 
-  constructor() {
-  }
+  constructor() {}
 
   increaseNumber(value: number) {
     this.counter += value;

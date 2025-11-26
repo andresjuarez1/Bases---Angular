@@ -1,24 +1,61 @@
-<h1>{{ name() }}</h1>
+<section class="min-h-screen flex items-center justify-center">
+  <div
+    class="container mx-auto max-w-xl p-8 bg-white/5 rounded-2xl shadow-xl backdrop-blur-sm border border-white/10"
+  >
+    <header class="text-center">
+      <h1 class="text-3xl font-semibold text-white tracking-tight">
+        {{ name() }}
+      </h1>
+      <p class="mt-2 text-sm text-gray-400">Detalles del héroe</p>
+    </header>
 
-<dl>
-  <td>Nombre:</td>
-  <dd>{{ name() }}</dd>
+    <dl class="grid grid-cols-2 gap-x-6 gap-y-4 text-sm">
+      <div>
+        <dt class="text-gray-400">Nombre</dt>
+        <dd class="text-white text-base font-medium">{{ name() }}</dd>
+      </div>
 
-  <td>Edad:</td>
-  <dd>{{ age() }}</dd>
+      <div>
+        <dt class="text-gray-400">Edad</dt>
+        <dd class="text-white text-base font-medium">{{ age() }}</dd>
+      </div>
 
-  <td>Método:</td>
-  <dd>{{ heroDescripction() }}</dd>
+      <div class="col-span-2">
+        <dt class="text-gray-400">Método</dt>
+        <dd class="text-white text-base font-medium">
+          {{ heroDescripction() }}
+        </dd>
+      </div>
 
-  <td>Capitalizado:</td>
-  <!-- <dd>{{ capitalizedName() }}</dd> -->
-  <dd>{{ name() | uppercase }}</dd>
-</dl>
+      <div class="col-span-2">
+        <dt class="text-gray-400">Capitalizado</dt>
+        <dd class="text-white text-base font-medium">
+          {{ name() | uppercase }}
+        </dd>
+      </div>
+    </dl>
 
-<button (click)="changeHero()" class="btn btn-primary mx-2">
-  Cambiar heroe
-</button>
+    <div class="mt-6 flex flex-wrap justify-center gap-3">
+      <button
+        (click)="changeHero()"
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-400"
+      >
+        Cambiar héroe
+      </button>
 
-<button (click)="changeHeroAge()" class="btn btn-primary">Cambiar edad</button>
+      <button
+        (click)="changeHeroAge()"
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium focus:outline-none focus:ring-2 focus:ring-emerald-400"
+      >
+        Cambiar edad
+      </button>
 
-<button (click)="resetForm()" class="btn btn-primary mx-2">Reset</button>
+      <button
+        (click)="resetForm()"
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-gray-700 hover:bg-gray-600 text-white text-sm font-medium focus:outline-none focus:ring-2 focus:ring-gray-500"
+      >
+        Reset
+      </button>
+    </div>
+  </div>
+</section>

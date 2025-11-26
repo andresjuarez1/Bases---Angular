@@ -1,10 +1,57 @@
-<h1>Counter Page</h1>
+<section
+  class="min-h-screen flex items-center justify-center bg-blackAndres px-4 py-12"
+>
+  <div
+    class="w-full max-w-2xl bg-white/5 border border-white/10 rounded-2xl shadow-xl p-8 backdrop-blur-sm text-white"
+  >
+    <h1
+      class="text-4xl sm:text-5xl font-extrabold text-violetAndres tracking-tight text-center"
+    >
+      Counter Page
+    </h1>
 
-<p>Counter {{ counter }}</p>
-<p>Counter signal {{ counterSignal() }}</p>
+    <main class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+      <div
+        class="bg-amber-400/90 rounded-lg p-4 text-blackAndres flex items-center justify-center"
+      >
+        <p class="text-xl sm:text-2xl font-semibold">
+          Counter <span class="ml-2">{{ counter }}</span>
+        </p>
+      </div>
 
-<div class="buttons-container">
-  <button (click)="increaseNumber(1)">+1</button>
-  <button (click)="decreaseNumber(1)">-1</button>
-  <button (click)="resetNumber()">Reset</button>
-</div>
+      <div
+        class="bg-violetAndres/90 rounded-lg p-4 text-white flex items-center justify-center"
+      >
+        <p class="text-xl sm:text-2xl font-semibold">
+          Counter signal <span class="ml-2">{{ counterSignal() }}</span>
+        </p>
+      </div>
+    </main>
+
+    <div class="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center">
+      <button
+        (click)="increaseNumber(1)"
+        class="w-full sm:w-40 inline-flex items-center cursor-pointer justify-center gap-2 px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-white text-sm font-medium shadow-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-300"
+        aria-label="Aumentar contador"
+      >
+        +1
+      </button>
+
+      <button
+        (click)="decreaseNumber(1)"
+        class="w-full sm:w-40 inline-flex items-center cursor-pointer justify-center gap-2 px-4 py-2 rounded-lg bg-red-500 hover:bg-red-400 text-white text-sm font-medium shadow-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-red-300"
+        aria-label="Disminuir contador"
+      >
+        -1
+      </button>
+
+      <button
+        (click)="resetNumber()"
+        class="w-full sm:w-40 inline-flex cursor-pointer items-center justify-center gap-2 px-4 py-2 rounded-lg bg-gray-700 hover:bg-gray-600 text-white text-sm font-medium shadow-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500"
+        aria-label="Reiniciar contador"
+      >
+        Reset
+      </button>
+    </div>
+  </div>
+</section>

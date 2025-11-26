@@ -1,0 +1,12 @@
+html,
+body {
+  background-color: #1a1a1a;
+}
+
+@import "tailwindcss";
+
+@theme {
+  --color-blackAndres: #1a1a1a;
+  --color-whiteAndres: #fafafa;
+  --color-violetAndres: #7c3aed;
+}
