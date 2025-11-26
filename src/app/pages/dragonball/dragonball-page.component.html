@@ -1,0 +1,51 @@
+<div
+  class="bg-blackAndres min-h-screen flex flex-col justify-center items-center text-whiteAndres"
+>
+  <div
+    class="container mx-auto max-w-xl p-8 bg-white/5 rounded-2xl shadow-xl backdrop-blur-sm border border-white/10"
+  >
+    <p class="text-4xl font-bold text-center">Onda Vital</p>
+    <section
+      class="grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-14"
+    >
+      <div class="flex flex-col justify-center gap-4 mt-4">
+        <h3 class="text-lg">Agregar</h3>
+        <input
+          type="text"
+          class="border-whiteAndres border-2 rounded-lg px-4 py-2 placeholder:text-gray-400"
+          placeholder="Nombre del personaje"
+        />
+        <input
+          type="text"
+          class="border-whiteAndres border-2 rounded-lg px-4 py-2 placeholder:text-gray-400"
+          placeholder="Poder del personaje"
+        />
+        <button
+          class="bg-violetAndres hover:bg-violet-900 cursor-pointer mt-4 text-whiteAndres font-semibold py-2 px-4 rounded-lg transition duration-200"
+        >
+          Agregar
+        </button>
+      </div>
+
+      <div class="flex flex-col">
+        <h3 class="text-2xl font-semibold">Listado</h3>
+        <ul class="list-disc text-xl mt-2">
+          @for (character of characters(); track character.id; let idx = $index)
+          {
+          <li>
+            <span> {{ idx + 1 }} - {{ character.name }} </span>
+            <strong
+              [class.text-red-500]="character.power > 7000"
+              [class.text-blue-500]="character.power < 3000"
+            >
+              <!-- Ejemplo de implementacion estilos para variables especificas con ngClass y computed -->
+              <!-- [ngClass]="powerClasses()" -->
+              ({{ character.power }})
+            </strong>
+          </li>
+          }
+        </ul>
+      </div>
+    </section>
+  </div>
+</div>

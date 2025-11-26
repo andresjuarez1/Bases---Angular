@@ -11,7 +11,7 @@ export class HeroPageComponent {
   age = signal(45);
 
   heroDescripction = computed(() => {
-    const description = `${this.name()} tiene ${this.age()} años`;
+    const description = `${this.name()} is ${this.age()}`;
     return description;
   });
 

@@ -1,0 +1,32 @@
+<nav
+  class="sticky top-0 flex space-x-8 md:space-x-12 p-4 bg-blackAndres text-white"
+>
+  <a
+    class="font-semibold text-lg"
+    [routerLink]="['/']"
+    [routerLinkActiveOptions]="{ exact: true }"
+    [routerLinkActive]="['underline', 'underline-offset-[6px]']"
+    >Counter</a
+  >
+  <a
+    class="font-semibold text-lg"
+    [routerLink]="['/hero']"
+    [routerLinkActiveOptions]="{ exact: true }"
+    [routerLinkActive]="['underline', 'underline-offset-[6px]']"
+    >Hero</a
+  >
+  <a
+    class="font-semibold text-lg"
+    [routerLink]="['/dragonball']"
+    [routerLinkActiveOptions]="{ exact: true }"
+    [routerLinkActive]="['underline', 'underline-offset-[6px]']"
+    >Dragonball</a
+  >
+  <a
+    class="font-semibold text-lg"
+    [routerLink]="['/others']"
+    [routerLinkActiveOptions]="{ exact: true }"
+    [routerLinkActive]="['underline', 'underline-offset-[6px]']"
+    >Others</a
+  >
+</nav>
