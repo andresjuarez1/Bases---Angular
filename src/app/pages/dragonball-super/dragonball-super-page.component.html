@@ -1,0 +1,42 @@
+<div
+  class="bg-blackAndres min-h-screen flex flex-col justify-center items-center text-whiteAndres"
+>
+  <div
+    class="container mx-auto max-w-xl p-8 bg-white/5 rounded-2xl shadow-xl backdrop-blur-sm border border-white/10"
+  >
+    <p class="text-4xl font-bold text-center">Onda Vital</p>
+    <section
+      class="grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-14"
+    >
+      <div class="flex flex-col justify-center gap-4 mt-4">
+        <h3 class="text-2xl font-semibold">Agregar {{ name() }}</h3>
+        <input
+          type="text"
+          class="border-whiteAndres border-2 rounded-lg px-4 py-2 placeholder:text-gray-400"
+          placeholder="Nombre del personaje"
+          [value]="name()"
+          (input)="name.set(txtName.value)"
+          #txtName
+        />
+        <!-- a diferencia del input el change no refleja los cambios al instante, es decir no es reactivo -->
+        <!-- (change)="name.set(txtName.value)" -->
+        <h3 class="text-2xl font-semibold">Poder: {{ power() }}</h3>
+        <input
+          type="number"
+          class="border-whiteAndres border-2 rounded-lg px-4 py-2 placeholder:text-gray-400"
+          placeholder="Poder del personaje"
+          [value]="power()"
+          (input)="power.set(+txtPower.value)"
+          #txtPower
+        />
+        <button
+          class="bg-violetAndres hover:bg-violet-900 cursor-pointer mt-4 text-whiteAndres font-semibold py-2 px-4 rounded-lg transition duration-200"
+          (click)="addCharacter()"
+        >
+          Agregar
+        </button>
+      </div>
+      <dragonball-character-list [characters]="characters()" />
+    </section>
+  </div>
+</div>

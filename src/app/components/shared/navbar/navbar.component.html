@@ -24,6 +24,13 @@
   >
   <a
     class="font-semibold text-lg"
+    routerLink="/dragonball-super"
+    [routerLinkActiveOptions]="{ exact: true }"
+    [routerLinkActive]="['underline', 'underline-offset-[6px]']"
+    >Dragonball Super</a
+  >
+  <a
+    class="font-semibold text-lg"
     [routerLink]="['/others']"
     [routerLinkActiveOptions]="{ exact: true }"
     [routerLinkActive]="['underline', 'underline-offset-[6px]']"
