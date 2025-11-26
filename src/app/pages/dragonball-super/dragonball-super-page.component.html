@@ -8,11 +8,13 @@
     <section
       class="grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-14"
     >
-      <dragonball-character-add (newCharacter)="addCharacter($event)" />
+      <dragonball-character-add
+        (newCharacter)="DragonballService.addCharacter($event)"
+      />
 
       <dragonball-character-list
         listName="Listado de personajes"
-        [characters]="characters()"
+        [characters]="DragonballService.characters()"
       />
     </section>
   </div>
