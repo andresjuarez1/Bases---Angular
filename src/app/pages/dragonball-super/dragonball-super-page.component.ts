@@ -1,11 +1,12 @@
 import { Component, computed, signal } from '@angular/core';
 import { CharacterListComponent } from '../../components/dragonball/character-list/character-list.component';
 import type { Character } from '../../interfaces/character.interface';
+import { CharacterAddComponent } from '../../components/dragonball/character-add/character-add.component';
 
 @Component({
   selector: 'app-dragonball-super',
   templateUrl: './dragonball-super-page.component.html',
-  imports: [CharacterListComponent],
+  imports: [CharacterListComponent, CharacterAddComponent],
 })
 export class DragonballSuperPageComponent {
   name = signal('');
@@ -23,32 +24,8 @@ export class DragonballSuperPageComponent {
     };
   });
 
-  addCharacter() {
-    console.log(this.name(), this.power());
-
-    if (!this.name() || this.power() <= 0) return;
-
-    const newCharacter: Character = {
-      id: this.characters().length + 1,
-      name: this.name(),
-      power: this.power(),
-    };
-
-    this.characters.update((currentCharacters) => [
-      ...currentCharacters,
-      newCharacter,
-    ]);
-
-    // this.characters.update((currentCharacters) => [
-    //   ...currentCharacters,
-    //   {
-    //     id: Math.max(...currentCharacters.map((c) => c.id)) + 1,
-    //     name: this.name(),
-    //     power: this.power(),
-    //   },
-    // ]);
-
-    this.resetFields();
+  addCharacter(Character: Character) {
+    this.characters.update((list) => [...list, Character]);
   }
 
   resetFields() {
